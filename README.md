@@ -11,10 +11,6 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -26,17 +22,17 @@
 
 # 📖 [Vet-clinic-database] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+
 
 **[Vet-clinic-database]** is a project where I used a relational database to create the initial data structure for a vet clinic. I created a table to store animals' information, inserted some data into it, and query it.
 
 ## 🛠 Built With <a name="built-with"></a>
 
-**[Postgresql]**
+### Postgresql
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+
 
 <details>
 <summary>Database</summary>
@@ -49,7 +45,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+
 
 - **[Create_a_table]**
 - **[Insert_some_data]**
@@ -61,7 +57,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+
 
 - [Live Demo Link](Not yet available)
 
@@ -108,7 +104,7 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+
 
 - [ ] **[Update_animals_table]**
 - [ ] **[Query_multiple_tables]**
