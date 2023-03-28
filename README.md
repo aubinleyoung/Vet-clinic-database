@@ -50,6 +50,7 @@
 - **[Create_a_table]**
 - **[Insert_some_data]**
 - **[Use_queries]**
+- **[Update_animals_table]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
