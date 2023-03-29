@@ -7,5 +7,16 @@ CREATE TABLE animals (
     escape_attempts INTEGER,
     neutered BOOLEAN,
     weight_kg DECIMAL(5,2)
+
 );
 ALTER TABLE animals ADD COLUMN species VARCHAR(20);
+
+CREATE TABLE owners (
+	id INTEGER PRIMARY KEY,
+	full_name VARCHAR(50),
+	age INTEGER
+);
+CREATE TABLE species (
+  id INTEGER PRIMARY KEY,
+  name VARCHAR(255)
+);
