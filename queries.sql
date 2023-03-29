@@ -7,3 +7,74 @@ SELECT name, escape_attempts FROM animals WHERE weight_kg > 10.5 ;
 SELECT * FROM animals WHERE neutered = TRUE;
 SELECT * FROM animals WHERE name <> 'Gabumon';
 SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
+
+
+BEGIN TRANSACTION;
+UPDATE animals SET species = 'unspecified';
+COMMIT;
+
+ROLLBACK;
+
+
+BEGIN TRANSACTION;
+
+UPDATE animals
+SET species = 'digimon'
+WHERE name LIKE '%mon';
+
+UPDATE animals
+SET species = 'pokemon'
+WHERE species IS NULL;
+
+COMMIT;
+
+BEGIN TRANSACTION;
+
+DELETE FROM animals;
+
+ROLLBACK;
+
+
+-- start transaction
+BEGIN;
+
+-- delete animals born after Jan 1st, 2022
+DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+
+-- create savepoint
+SAVEPOINT my_savepoint;
+
+-- update all animals' weight to be their weight multiplied by -1
+UPDATE animals SET weight_kg = weight_kg * -1;
+
+-- rollback to savepoint
+ROLLBACK TO my_savepoint;
+
+-- update all animals' weights that are negative to be their weight multiplied by -1
+UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+
+-- commit transaction
+COMMIT;
+
+
+SELECT COUNT(*) FROM animals;
+
+SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
+
+SELECT AVG(weight_kg) FROM animals;
+
+SELECT neutered, AVG(escape_attempts) FROM animals GROUP BY neutered;
+
+
+
+SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
+
+SELECT species, AVG(escape_attempts)
+FROM animals
+WHERE EXTRACT(YEAR FROM date_of_birth) BETWEEN 1990 AND 2000
+GROUP BY species;
+
+
+
+
+
