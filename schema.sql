@@ -35,3 +35,20 @@ CREATE TABLE vets (
     age INTEGER,
     date_of_graduation DATE
 );
+
+CREATE TABLE specializations (
+    id SERIAL PRIMARY KEY ,
+    vet_id INTEGER,
+    species_id INTEGER,
+    FOREIGN KEY (vet_id) REFERENCES vets(id),
+    FOREIGN KEY (species_id) REFERENCES species(id)
+);
+
+CREATE TABLE visits (
+    id SERIAL PRIMARY KEY,
+    vet_id INTEGER,
+    animal_id INTEGER,
+    visit_date DATE,
+    FOREIGN KEY (vet_id) REFERENCES vets(id),
+    FOREIGN KEY (animal_id) REFERENCES animals(id)
+);
