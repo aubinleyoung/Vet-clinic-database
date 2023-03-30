@@ -20,3 +20,11 @@ CREATE TABLE species (
   id INTEGER PRIMARY KEY,
   name VARCHAR(255)
 );
+
+ALTER TABLE animals DROP COLUMN species;
+
+ALTER TABLE owners
+ADD COLUMN species_id INTEGER REFERENCES species(id);
+
+ALTER TABLE species
+ADD COLUMN owner_id INTEGER REFERENCES owners(id);
