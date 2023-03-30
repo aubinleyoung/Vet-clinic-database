@@ -51,6 +51,7 @@
 - **[Insert_some_data]**
 - **[Use_queries]**
 - **[Update_animals_table]**
+- **[Query_multiple_tables]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,9 +107,6 @@ Clone this repository to your desired folder:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-
-- [ ] **[Update_animals_table]**
-- [ ] **[Query_multiple_tables]**
 - [ ] **[Add_join_table_for_visits]**
 - [ ] **[Database_performance_audit]**
 - [ ] **[Add_database_schema_diagram]**
