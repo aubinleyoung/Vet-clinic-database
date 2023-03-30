@@ -26,3 +26,12 @@ ALTER TABLE animals DROP COLUMN species;
 ALTER TABLE animals DROP COLUMN species;
 ALTER TABLE animals ADD COLUMN species_id INT REFERENCES species(id); 
 ALTER TABLE animals ADD COLUMN owner_id INT REFERENCES owner(id);
+
+-- Vet clinic database: add "join table" for visits
+
+CREATE TABLE vets (
+    id SERIAL PRIMARY KEY ,
+    name TEXT,
+    age INTEGER,
+    date_of_graduation DATE
+);
