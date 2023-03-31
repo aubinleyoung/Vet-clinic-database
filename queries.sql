@@ -120,5 +120,70 @@ ORDER BY COUNT(animals.id) DESC
 LIMIT 1;
 
 
+-- Vet clinic database: add "join table" for visits
+SELECT a.name
+FROM animals a
+JOIN visits v ON a.id = v.animal_id
+JOIN vets vt ON vt.id = v.vet_id
+WHERE vt.name = 'William Tatcher'
+ORDER BY v.visit_date DESC
+LIMIT 1;
+
+SELECT COUNT(DISTINCT a.id)
+FROM animals a
+JOIN visits v ON a.id = v.animal_id
+JOIN vets vt ON vt.id = v.vet_id
+WHERE vt.name = 'Stephanie Mendez';
+
+SELECT vt.name, s.name AS specialty
+FROM vets vt
+LEFT JOIN specializations sp ON vt.id = sp.vet_id
+LEFT JOIN species s ON sp.species_id = s.id;
+
+SELECT a.name
+FROM animals a
+JOIN visits v ON a.id = v.animal_id
+JOIN vets vt ON vt.id = v.vet_id
+WHERE vt.name = 'Stephanie Mendez'
+AND v.visit_date BETWEEN '2020-04-01' AND '2020-08-30'
+
+SELECT a.name, COUNT(v.id) AS visits
+FROM animals a
+JOIN visits v ON a.id = v.animal_id
+GROUP BY a.id
+ORDER BY visits DESC
+LIMIT 1;
+;
+
+SELECT vt.name, MIN(v.visit_date) AS first_visit
+FROM vets vt
+JOIN visits v ON vt.id = v.vet_id
+JOIN animals a ON a.id = v.animal_id
+WHERE vt.name = 'Maisy Smith'
+GROUP BY vt.id;
+
+SELECT a.name AS animal, vt.name AS vet, v.visit_date
+FROM animals a
+JOIN visits v ON a.id = v.animal_id
+JOIN vets vt ON vt.id = v.vet_id
+ORDER BY v.visit_date DESC
+LIMIT 1;
+
+SELECT COUNT(*)
+FROM visits v
+JOIN vets vt ON v.vet_id = vt.id
+JOIN animals a ON v.animal_id = a.id
+LEFT JOIN specializations sp ON vt.id = sp.vet_id AND a.species_id = sp.species_id
+WHERE sp.id IS NULL;
+
+SELECT s.name AS specialty, COUNT(*) AS visits
+FROM animals a
+JOIN visits v ON a.id = v.animal_id
+JOIN specializations sp ON a.species_id = sp.species_id
+JOIN vets vt ON vt.id = sp.vet_id
+WHERE vt.name = 'Maisy Smith'
+GROUP BY sp.species_id
+ORDER BY visits DESC
+LIMIT 1;
 
 
