@@ -17,7 +17,6 @@
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
-
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [Vet-clinic-database] <a name="about-project"></a>
