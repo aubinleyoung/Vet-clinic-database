@@ -54,13 +54,24 @@ INSERT INTO specializations (vet_id, species_id) VALUES
 
     
 -- Insert the data into the visits table
-INSERT INTO visits (animal_id, vet_id, visit_date) VALUES
-    (1, 1, '2020-05-24'), -- Agumon visited William Tatcher on May 24th, 2020.
-    (1, 3, '2020-07-22'), -- Agumon visited Stephanie Mendez on Jul 22th, 2020.
-    (2, 4, '2021-02-02'), -- Gabumon visited Jack Harkness on Feb 2nd, 2021.
-    (3, 2, '2020-01-05'), (3, 2, '2020-03-08'), (3, 2, '2020-05-14'), -- Pikachu visited Maisy Smith on Jan 5th, Mar 8th, and May 14th, 2020.
-    (4, 3, '2021-05-04'), -- Devimon visited Stephanie Mendez on May 4th, 2021.
-    (5, 4, '2021-02-24'), -- Charmander visited Jack Harkness on Feb 24th, 2021.
-    (6, 2, '2019-12-21'), (6, 1, '2020-08-10'), (6, 2, '2021-04-07'), -- Plantmon visited Maisy Smith on Dec 21st, 2019, William Tatcher on Aug 10th, 2020, and Maisy Smith again on Apr 7th, 2021.
-    (7, 3, '2019-09-29'), -- Squirtle visited Stephanie Mendez on Sep 29th, 2019.
-    (8, 4, '2020-10-03'), (8, 4, '2020-11-04'), -- Angemon visited Jack Harkness on Oct 3rd and Nov 4th, 2020
+INSERT INTO visits (animal_id, vet_id, visit_date)
+VALUES (1, 1, DATE '2020-05-25'),
+(1,3, DATE '2020-07-22'),
+(2,4, DATE '2021-02-02'),
+(3,2, DATE '2020-01-05'),
+(3,2, DATE '2020-03-08'),
+(3,2, DATE '2020-05-14'),
+(4,3, DATE '2021-05-04'),
+(5,4, DATE '2021-02-24'),
+(6,2, DATE '2019-12-24'),
+(6,1, DATE '2020-08-10'),
+(6,2, DATE '2021-04-07'),
+(7,4, DATE '2019-09-29'),
+(8,3, DATE '2020-10-03'),
+(8,3, DATE '2020-11-04'),
+(9,2, DATE '2019-01-24'),
+(9,2, DATE '2019-05-15'),
+(9,2, DATE '2020-02-27'),
+(9,2, DATE '2020-08-03'),
+(10,3, DATE '2020-05-24'),
+(10,1, DATE '2021-01-11');
