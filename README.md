@@ -1,6 +1,6 @@
 
 <!-- TABLE OF CONTENTS -->
-# [](./image%20(1).png)
+![](./image%20(1).png)
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
